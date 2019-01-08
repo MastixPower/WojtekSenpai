@@ -70,8 +70,7 @@ private static final int portNumber=10000;
         Socket clientSocket = new Socket("localhost", port);
         DataOutputStream outToServer=new DataOutputStream(clientSocket.getOutputStream());
         outToServer.writeBytes(RequestTypes.PUSH_FILE+" "+fileName+'\n');
-        BufferedReader inFromServer= null;
-        inFromServer=new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        BufferedReader inFromServer=new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         DataOutputStream outToClient=null;
         try {
             outToClient= new DataOutputStream(clientSocket.getOutputStream());

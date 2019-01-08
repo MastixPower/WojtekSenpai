@@ -5,11 +5,11 @@ public class Server {
     public static void main(String[] args) throws Exception {
         ServerSocket welcomeSocket = new ServerSocket(10000);
         while(true) {
-            System.out.println("odbyt");
             Socket connectionSocket=null;
             try {
                 connectionSocket= welcomeSocket.accept();
                 System.out.println("Połączenie zaakceptowane");
+
             }catch (Exception ex){
                 ex.printStackTrace();
                 System.out.println("Problem z połączeniem z klientem");
